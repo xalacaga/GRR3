@@ -1,0 +1,37 @@
+Mysql Persitance Data
+mysql-data:
+ image: busybox
+ container_name: mysql-data
+ volumes:
+  - /var/lib/mysql:/var/lib/mysql
+
+Mysql Container
+mysql:
+ image: mysql
+ container_name: mysql
+ hostname: mysql
+ volumes_from:
+  - mysql-data
+ env_file:
+  - ./mysql.env
+ ports:
+  - 3306:3306
+GRR Pesitance Data
+grr-data:
+ image: busybox
+ container_name: grr-data
+ volumes:
+ - /var/www/html/grr:/var/www/html/grr
+
+GRR Container
+grr:
+ image: xav/grr3
+ container_name : grr
+ hostname: grr
+ ports:
+  - 80:80
+ links:
+  - mysql:mysql
+    volumes_from:
+    - grr-data
+ restart: always
