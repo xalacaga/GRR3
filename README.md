@@ -1,7 +1,13 @@
 # GRR3
-GRR : Gestion des Reservations et Ressources Docker File
+## GRR : Gestion des Reservations et Ressources 
+```sh
+## le site officiel
+```sh
 https://grr.devome.com/fr/grr3
-Mise en place de l'excellent outil gratuit de Gestion de ressources par Docker.
-En cours de construction...
+```
+## Under construct
+## Deployed without DB 
+```sh
+docker run --name grr3 -p 80:80 -d xalacaga/grr3
 
 
