@@ -22,7 +22,7 @@ MYSQL_PASSWORD=grrpassword
 Start your docker compose
 sudo docker-compose up -d
 
-## fist RUN
+## first RUN
 log to your GRR
 http://localhost 
 configure your bdd 
