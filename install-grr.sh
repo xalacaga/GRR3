@@ -18,10 +18,10 @@ cp -r ${VERSION}/GRR/* ${DEST_GRR}
 cd /opt
 rm -Rf ${DEPOT}
 chown -R www-data:www-data ${DEST_GRR}
-
+fi
 #Configuration du VHOST
 echo -e "<VirtualHost *:80>\n\tDocumentRoot /var/www/html/grr\n\n\t<Directory /var/www/html/grr>\n\t\tAllowOverride All\n\t\tOrder Allow,Deny\n\t\tAllow from all\n\t</Directory>\n\n\tErrorLog /var/log/apache2/error-grr.log\n\tLogLevel warn\n\tCustomLog /var/log/apache2/access-grr.log combined\n</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
-fi
+
 #Activation Rewrite
 a2enmod rewrite && service apache2 restart && service apache2 stop
 
