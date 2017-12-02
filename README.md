@@ -4,9 +4,30 @@
 ```sh
 https://grr.devome.com/fr/grr3
 ```
-## Under construct
-## Deployed without DB 
-```sh
-docker run --name grr3 -p 80:80 -d xalacaga/grr
+## First
+Create Persistance
+mkdir -P /opt/persistance/grr/html
+mkdir -P /opt/persistance/grr/mysql
+ 
+## Second
+Configure your mysql.env
+exemple:
 
+MYSQL_ROOT_PASSWORD=rootpassword
+MYSQL_DATABASE=grrdb
+MYSQL_USER=xav
+MYSQL_PASSWORD=grrpassword
+
+## Final
+Start your docker compose
+sudo docker-compose up -d
+
+## fist RUN
+log to your GRR
+http://localhost 
+configure your bdd 
+to find bbd ip type : docker inspect mysql | grep IPAddress
+
+That's all
+enjoy.
 
