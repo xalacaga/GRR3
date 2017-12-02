@@ -11,6 +11,7 @@ mkdir -P /opt/persistance/grr/mysql
  
 ## Second
 Configure your mysql.env
+```
 exemple:
 
 MYSQL_ROOT_PASSWORD=rootpassword
