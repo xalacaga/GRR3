@@ -1,37 +1,25 @@
-Mysql Persitance Data
-mysql-data:
- image: busybox
- container_name: mysql-data
- volumes:
-  - /var/lib/mysql:/var/lib/mysql
-
-Mysql Container
+#Mysql Container
 mysql:
  image: mysql
  container_name: mysql
  hostname: mysql
- volumes_from:
-  - mysql-data
+ volumes:
+         - /opt/persistance/grr/mysql:/var/lib/mysql
  env_file:
   - ./mysql.env
  ports:
   - 3306:3306
-GRR Pesitance Data
-grr-data:
- image: busybox
- container_name: grr-data
- volumes:
- - /var/www/html/grr:/var/www/html/grr
 
-GRR Container
+
+#GRR Container
 grr:
- image: xav/grr3
- container_name : grr
- hostname: grr
+ image: xalacaga/grr3
+ container_name : grr3
+ hostname: grr3
  ports:
   - 80:80
  links:
   - mysql:mysql
-    volumes_from:
-    - grr-data
+ volumes:
+         - /opt/persistance/grr/html:/var/www/html/grr
  restart: always
