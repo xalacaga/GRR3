@@ -1,9 +1,9 @@
 # GRR3
 ## GRR : Gestion des Reservations et Ressources 
 ## Official site
-```
-https://grr.devome.com/fr/grr3
-```
+
+[GRR](https://grr.devome.com/fr/grr3)
+
 ## First
 Create Persistance
 
