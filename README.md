@@ -7,9 +7,9 @@
 ## First
 Create Persistance
 
-mkdir -P /opt/persistance/grr/html
+mkdir -p /opt/persistance/grr/html
 
-mkdir -P /opt/persistance/grr/mysql
+mkdir -p /opt/persistance/grr/mysql
  
 ## Second
 Configure your mysql.env
